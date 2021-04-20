@@ -53,6 +53,7 @@ SITE_ID = 1
 
 #LOGIN_URL = '/admin/'
 LOGIN_REDIRECT_URL = '/posts'
+LOGOUT_REDIRECT_URL = '/'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -95,7 +96,7 @@ TEMPLATES = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-    
+
     'django.contrib.auth.backends.ModelBackend',
 
     'allauth.account.auth_backends.AuthenticationBackend',

@@ -9,6 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
+
 @login_required
 def my_profile_view(request):
     profile = Profile.objects.get(user=request.user)
@@ -163,5 +164,3 @@ def remove_from_friends(request):
         rel.delete()
         return redirect(request.META.get('HTTP_REFERER'))
     return redirect('profiles:my-profile-view')
-
-
