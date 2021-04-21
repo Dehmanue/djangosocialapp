@@ -1,3 +1,4 @@
+{% load static %}
 {% url 'home-view' as path_to_home %}
 {% url 'posts:main-post-view' as path_to_posts %}
 {% url 'profiles:my-profile-view' as path_to_my_profile %}
@@ -5,19 +6,13 @@
 {% url 'profiles:invite-profiles-view' as path_to_invites %}
 {% url 'profiles:all-profiles-view' as path_to_all_profiles %}
 
-
-<div class="nav mb-7 ui inverted menu">
-    <div class="ui container">
+<div class="nav mb-7 mt-5 ui inverted menu body">
+    <div class="ui container ">
         {% if user.is_authenticated %}
-      <a href="{{path_to_posts}}" class="{% if request.path == path_to_home %} active {% endif %}item">
-          <h3>NCA Social App</h3>
-      </a>
-      {% else %}
-      <a href="{% url 'account_login' %}" class="item">
-        <h3>NCA Social App</h3>
-      </a>
-
-      {% endif %}
+            <a href="{{path_to_posts}}" class="navbar-brand {% if request.path == path_to_home %} active {% endif %}item"><img src="{% static 'logonca.png' %}"></a>
+        {% else %}
+            <a href="{% url 'account_login' %}" class="item"></a>
+        {% endif %}
 
       {% if request.user.is_authenticated %}
       <a href="{{path_to_posts}}" class="{% if request.path == path_to_posts %} active {% endif %}item">

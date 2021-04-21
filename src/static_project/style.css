@@ -3,9 +3,9 @@ body {
 }
 
 .nav {
-    border-radius: 0px i !important;
-    padding: 10px 0 10px 0;
-    background-color: blue;
+    border-radius: 0px !important;
+    padding: 5px 0 5px 0;
+    background-color: #2e98d4 !important;
 }
 
 .mb-7 {
