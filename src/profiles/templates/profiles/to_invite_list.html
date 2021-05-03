@@ -4,10 +4,26 @@
 invite friends
 {% endblock %}
 
+{% if is_empty %}
+<h1>No invitations to send..</h1>
+{% endif %}
+
 {% block content %}
-<ul>
-    {% for item in qs %}
-    <li>{{item}}</li>
-    {% endfor %}
-</ul>
+{% for item in qs %}
+<div class="ui segment">
+    <div class="ui grid">
+        <div class="row">
+            <div class="three wide column">
+                <img class="ui small circular image" src="{{obj.avatar.url}}" alt="Image missing">
+            </div>
+            <div class="thirteen wide column">
+                <h3>{{obj.user}}</h3>
+                <p>{{obj.bio}}</p>
+                <a href="{{obj.get_absolute_url}}"></a>
+                <button class="ui primary button w-big mb-5">See Profile</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}
